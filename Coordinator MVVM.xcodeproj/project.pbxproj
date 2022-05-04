@@ -66,14 +66,13 @@
 		8B53339B282198B4007FF590 /* Coordinator MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				8B5333B028219B9C007FF590 /* Coordinator.swift */,
 				8B53339C282198B4007FF590 /* AppDelegate.swift */,
+				8B5333C62822D948007FF590 /* Coordinators */,
 				8B5333C12822D728007FF590 /* Views */,
 				8B5333C02822D721007FF590 /* Controllers */,
 				8B5333A5282198B5007FF590 /* Assets.xcassets */,
 				8B5333A7282198B5007FF590 /* LaunchScreen.storyboard */,
 				8B5333AA282198B5007FF590 /* Info.plist */,
-				8B5333B228219CF1007FF590 /* MainCoordinator.swift */,
 			);
 			path = "Coordinator MVVM";
 			sourceTree = "<group>";
@@ -96,6 +95,15 @@
 				8B5333C42822D7F1007FF590 /* ScreenCViewModel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8B5333C62822D948007FF590 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				8B5333B028219B9C007FF590 /* Coordinator.swift */,
+				8B5333B228219CF1007FF590 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
