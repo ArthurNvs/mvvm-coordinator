@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class ScreenAViewController: UIViewController, Coordinating {
-    var coordinator: Coordinator?
+class ScreenAViewController: UIViewController {
+    var viewModel: ScreenAViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class ScreenAViewController: UIViewController, Coordinating {
     }
     
     @objc func didTapButton() {
-        coordinator?.eventOcurred(with: .directToB)
+        viewModel.goToScreenB()
     }
 
 }

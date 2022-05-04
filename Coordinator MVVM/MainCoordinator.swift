@@ -2,25 +2,46 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
-    var navigationController: UINavigationController?
+    var parentCoordinator: Coordinator?
+    var children: [Coordinator] = []
+    var navigationController: UINavigationController
     
-    func eventOcurred(with type: Event) {
-        switch type {
-        case .directToA: directToScreen(ScreenAViewController())
-        case .directToB: directToScreen(ScreenBViewController())
-        case .directToC: directToScreen(ScreenCViewController())
-        }
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
     func start() {
-        var viewController: UIViewController & Coordinating = ScreenAViewController()
-        viewController.coordinator = self
-        navigationController?.setViewControllers([viewController], animated: false)
+        goToA()
     }
     
-    func directToScreen(_ viewController: UIViewController & Coordinating) {
-        var viewController: UIViewController & Coordinating = viewController
-        viewController.coordinator = self
-        navigationController?.pushViewController(viewController, animated: true)
+    func goToA() {
+        let screenAViewController = ScreenAViewController()
+        let screenAViewModel = ScreenAViewModel.init()
+        
+        screenAViewModel.coordinator = self
+        screenAViewController.viewModel = screenAViewModel
+        
+        navigationController.pushViewController(screenAViewController, animated: true)
     }
+    
+    func goToB() {
+        let screenBViewController = ScreenBViewController()
+        let screenBViewModel = ScreenBViewModel.init()
+        
+        screenBViewModel.coordinator = self
+        screenBViewController.viewModel = screenBViewModel
+        
+        navigationController.pushViewController(screenBViewController, animated: true)
+    }
+    
+    func goToC() {
+        let screenCViewController = ScreenCViewController()
+        let screenCViewModel = ScreenCViewModel.init()
+        
+        screenCViewModel.coordinator = self
+        screenCViewController.viewModel = screenCViewModel
+        
+        navigationController.pushViewController(screenCViewController, animated: true)
+    }
+    
 }

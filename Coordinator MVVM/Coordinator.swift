@@ -1,19 +1,9 @@
 import Foundation
 import UIKit
 
-enum Event {
-    case directToA
-    case directToB
-    case directToC
-}
-
 protocol Coordinator {
-    var navigationController: UINavigationController? { get set }
-    
-    func eventOcurred(with type: Event)
+    var parentCoordinator: Coordinator? { get set }
+    var children: [Coordinator] { get set }
+    var navigationController: UINavigationController { get set }
     func start()
-}
-
-protocol Coordinating {
-    var coordinator: Coordinator? { get set }
 }

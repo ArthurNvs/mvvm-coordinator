@@ -1,24 +1,25 @@
 import Foundation
 import UIKit
 
-class ScreenBViewController: UIViewController, Coordinating {
-    var coordinator: Coordinator?
+class ScreenCViewController: UIViewController {
+    var viewModel: ScreenCViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-        title = "Screen B"
-        
+        view.backgroundColor = .green
+        title = "Screen C"
+    
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 220, height: 55))
         view.addSubview(button)
         button.center = view.center
-        button.backgroundColor = .systemBlue
-        button.setTitle("Screen C", for: .normal)
+        button.backgroundColor = .systemMint
+        button.setTitle("Screen A", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     
     @objc func didTapButton() {
-        coordinator?.eventOcurred(with: .directToC)
+        viewModel.goToScreenA()
     }
+    
 }
