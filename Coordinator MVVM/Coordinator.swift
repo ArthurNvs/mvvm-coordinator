@@ -2,7 +2,9 @@ import Foundation
 import UIKit
 
 enum Event {
-    case buttonTapped
+    case directToA
+    case directToB
+    case directToC
 }
 
 protocol Coordinator {

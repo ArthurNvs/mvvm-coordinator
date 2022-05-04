@@ -6,10 +6,9 @@ class MainCoordinator: Coordinator {
     
     func eventOcurred(with type: Event) {
         switch type {
-        case .buttonTapped:
-            var viewController: UIViewController & Coordinating = ScreenCViewController()
-            viewController.coordinator = self
-            navigationController?.pushViewController(viewController, animated: true)
+        case .directToA: directToScreen(ScreenAViewController())
+        case .directToB: directToScreen(ScreenBViewController())
+        case .directToC: directToScreen(ScreenCViewController())
         }
     }
     
@@ -17,5 +16,11 @@ class MainCoordinator: Coordinator {
         var viewController: UIViewController & Coordinating = ScreenAViewController()
         viewController.coordinator = self
         navigationController?.setViewControllers([viewController], animated: false)
+    }
+    
+    func directToScreen(_ viewController: UIViewController & Coordinating) {
+        var viewController: UIViewController & Coordinating = viewController
+        viewController.coordinator = self
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
