@@ -2,8 +2,17 @@ import Foundation
 import UIKit
 
 class ScreenAViewController: UIViewController {
-    var viewModel: ScreenAViewModel!
-
+    var viewModel: ScreenAViewModel
+    
+    init(viewModel: ScreenAViewModel){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -21,6 +30,6 @@ class ScreenAViewController: UIViewController {
     @objc func didTapButton() {
         viewModel.goToScreenB()
     }
-
+    
 }
 
