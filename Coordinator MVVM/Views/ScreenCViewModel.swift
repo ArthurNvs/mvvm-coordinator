@@ -1,7 +1,11 @@
 import Foundation
 
 class ScreenCViewModel {
-    weak var coordinator: MainCoordinator!
+    var coordinator: MainCoordinator
+    
+    init(coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+    }
     
     func goToScreenA() {
         coordinator.goToA()
