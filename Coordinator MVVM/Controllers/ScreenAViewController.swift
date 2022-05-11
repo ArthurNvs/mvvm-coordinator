@@ -8,7 +8,7 @@ class ScreenAViewController: UIViewController {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 220, height: 30))
         button.center = view.center
         button.backgroundColor = .systemBlue
-        button.setTitle("Enviar nome completo", for: .normal)
+        button.setTitle("Send full name", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return button
@@ -57,7 +57,16 @@ class ScreenAViewController: UIViewController {
     @objc func didTapButton() {
         if (nameTextField.text != "" && lastNameTextField.text != "") {
         viewModelFactory.goToScreenB()
+        } else {
+            showAlertMessage(title: "Ooops!", message: "Please insert name and last name")
         }
+    }
+    
+    private func showAlertMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "I'll do it!", style: .default, handler: nil)
+                    alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
