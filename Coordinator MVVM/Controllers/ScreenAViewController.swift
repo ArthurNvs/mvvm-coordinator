@@ -55,7 +55,9 @@ class ScreenAViewController: UIViewController {
     }
     
     @objc func didTapButton() {
+        if (nameTextField.text != "" && lastNameTextField.text != "") {
         viewModelFactory.goToScreenB()
+        }
     }
 }
 
