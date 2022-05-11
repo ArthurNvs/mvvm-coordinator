@@ -5,7 +5,7 @@ class ScreenAViewController: UIViewController {
     var viewModelFactory: ScreenAViewModel
     
     private lazy var button: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 220, height: 30))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
         button.center = view.center
         button.backgroundColor = .systemBlue
         button.setTitle("Send full name", for: .normal)
@@ -75,11 +75,11 @@ private extension ScreenAViewController {
         NSLayoutConstraint.activate([
             self.lastNameTextField.leadingAnchor.constraint(equalTo: button.leadingAnchor),
             self.lastNameTextField.trailingAnchor.constraint(equalTo: button.trailingAnchor),
-            self.lastNameTextField.bottomAnchor.constraint(equalTo: button.topAnchor),
+            self.lastNameTextField.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -10),
             
             self.nameTextField.leadingAnchor.constraint(equalTo: lastNameTextField.leadingAnchor),
             self.nameTextField.trailingAnchor.constraint(equalTo: lastNameTextField.trailingAnchor),
-            self.nameTextField.bottomAnchor.constraint(equalTo: lastNameTextField.topAnchor),
+            self.nameTextField.bottomAnchor.constraint(equalTo: lastNameTextField.topAnchor, constant: -10),
         ])
     }
 }
