@@ -19,9 +19,9 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(screenAViewController, animated: true)
     }
     
-    func goToB() {
+    func goToB(_ completion: String) {
         let screenBViewModel = ScreenBViewModel.init(coordinator: self)
-        let screenBViewController = ScreenBViewController(viewModel: screenBViewModel)
+        let screenBViewController = ScreenBViewController(viewModel: screenBViewModel, completion: completion)
         navigationController.pushViewController(screenBViewController, animated: true)
     }
     

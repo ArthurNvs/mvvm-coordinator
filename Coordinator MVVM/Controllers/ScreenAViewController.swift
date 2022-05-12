@@ -64,7 +64,8 @@ class ScreenAViewController: UIViewController {
     
     @objc func didTapButton() {
         if (nameTextField.text != "" && lastNameTextField.text != "") {
-        viewModelFactory.goToScreenB()
+            viewModelFactory.completionHandler = nameTextField.text! + " " + lastNameTextField.text!
+            viewModelFactory.goToScreenB()
         } else {
             showAlertMessage(title: "Ooops!", message: "Please insert name and last name")
         }

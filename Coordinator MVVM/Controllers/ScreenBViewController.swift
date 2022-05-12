@@ -3,9 +3,19 @@ import UIKit
 
 class ScreenBViewController: UIViewController {
     var viewModel: ScreenBViewModel
+    public var completion: String
     
-    init(viewModel: ScreenBViewModel){
+    private lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.backgroundColor = UIColor.white
+        return datePicker
+    }()
+    
+    init(viewModel: ScreenBViewModel, completion: String){
         self.viewModel = viewModel
+        self.completion = completion
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -16,15 +26,16 @@ class ScreenBViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        title = "Screen B"
+        title = completion
+        view.addSubview(datePicker)
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 220, height: 55))
-        view.addSubview(button)
-        button.center = view.center
-        button.backgroundColor = .systemBlue
-        button.setTitle("Screen C", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 220, height: 55))
+//        view.addSubview(button)
+//        button.center = view.center
+//        button.backgroundColor = .systemBlue
+//        button.setTitle("Screen C", for: .normal)
+//        button.setTitleColor(.white, for: .normal)
+//        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     
     @objc func didTapButton() {
