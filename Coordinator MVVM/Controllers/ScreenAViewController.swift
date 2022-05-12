@@ -9,8 +9,9 @@ class ScreenAViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.center = view.center
         button.backgroundColor = .systemBlue
-        button.setTitle("Send full name", for: .normal)
+        button.setTitle("send full name", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         return button
     }()
@@ -21,7 +22,10 @@ class ScreenAViewController: UIViewController {
         textField.borderStyle = .line
         textField.textAlignment = .left
         textField.center = view.center
-        textField.placeholder = "Name"
+        textField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [
+            .foregroundColor: UIColor.systemBlue,
+            .font: UIFont.boldSystemFont(ofSize: 17),
+        ])
         return textField
     }()
     
@@ -31,7 +35,10 @@ class ScreenAViewController: UIViewController {
         textField.borderStyle = .line
         textField.textAlignment = .left
         textField.center = view.center
-        textField.placeholder = "Last name"
+        textField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: [
+            .foregroundColor: UIColor.systemBlue,
+            .font: UIFont.boldSystemFont(ofSize: 17)
+        ])
         return textField
     }()
     
@@ -65,8 +72,7 @@ class ScreenAViewController: UIViewController {
     
     private func showAlertMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "I'll do it!", style: .default, handler: nil)
-                    alertController.addAction(defaultAction)
+        alertController.addAction(UIAlertAction(title: "I'll do it!", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
 }
