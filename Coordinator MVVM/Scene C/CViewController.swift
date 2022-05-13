@@ -1,10 +1,10 @@
 import Foundation
 import UIKit
 
-class ScreenCViewController: UIViewController {
-    var viewModel: ScreenCViewModel
+class CViewController: UIViewController {
+    var viewModel: CViewModel
     
-    init(viewModel: ScreenCViewModel){
+    init(viewModel: CViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

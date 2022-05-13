@@ -1,13 +1,13 @@
 import Foundation
 
-class ScreenCViewModel {
+class BViewModel {
     var coordinator: MainCoordinator
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
     
-    func goToScreenA() {
-        coordinator.goToA()
+    func goToScreenC() {
+        coordinator.goToC()
     }
 }

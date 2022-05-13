@@ -14,20 +14,20 @@ class MainCoordinator: Coordinator {
     }
     
     func goToA() {
-        let screenAViewModel = ScreenAViewModel.init(coordinator: self)
-        let screenAViewController = ScreenAViewController(viewModel: screenAViewModel)
+        let screenAViewModel = AViewModel(coordinator: self)
+        let screenAViewController = AViewController(viewModel: screenAViewModel)
         navigationController.pushViewController(screenAViewController, animated: true)
     }
     
     func goToB(_ completion: String) {
-        let screenBViewModel = ScreenBViewModel.init(coordinator: self)
-        let screenBViewController = ScreenBViewController(viewModel: screenBViewModel, completion: completion)
+        let screenBViewModel = BViewModel(coordinator: self)
+        let screenBViewController = BViewController(viewModel: screenBViewModel, completion: completion)
         navigationController.pushViewController(screenBViewController, animated: true)
     }
     
     func goToC() {
-        let screenCViewModel = ScreenCViewModel.init(coordinator: self)
-        let screenCViewController = ScreenCViewController(viewModel: screenCViewModel)
+        let screenCViewModel = CViewModel(coordinator: self)
+        let screenCViewController = CViewController(viewModel: screenCViewModel)
         navigationController.pushViewController(screenCViewController, animated: true)
     }
     

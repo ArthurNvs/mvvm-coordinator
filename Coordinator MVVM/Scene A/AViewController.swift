@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class ScreenAViewController: UIViewController {
-    var viewModelFactory: ScreenAViewModel
+class AViewController: UIViewController {
+    var viewModelFactory: AViewModel
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -42,7 +42,7 @@ class ScreenAViewController: UIViewController {
         return textField
     }()
     
-    init(viewModel: ScreenAViewModel){
+    init(viewModel: AViewModel){
         self.viewModelFactory = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,7 +64,7 @@ class ScreenAViewController: UIViewController {
     
     @objc func didTapButton() {
         if (nameTextField.text != "" && lastNameTextField.text != "") {
-            viewModelFactory.completionHandler = nameTextField.text! + " " + lastNameTextField.text!
+            viewModelFactory.fullName = nameTextField.text! + " " + lastNameTextField.text!
             viewModelFactory.goToScreenB()
         } else {
             showAlertMessage(title: "Ooops!", message: "Please insert name and last name")
@@ -78,7 +78,7 @@ class ScreenAViewController: UIViewController {
     }
 }
 
-private extension ScreenAViewController {
+private extension AViewController {
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
             self.lastNameTextField.leadingAnchor.constraint(equalTo: button.leadingAnchor),

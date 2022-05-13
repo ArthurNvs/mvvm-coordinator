@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class ScreenBViewController: UIViewController {
-    var viewModel: ScreenBViewModel
+class BViewController: UIViewController {
+    var viewModel: BViewModel
     public var completion: String
     
     private lazy var datePicker: UIDatePicker = {
@@ -13,7 +13,7 @@ class ScreenBViewController: UIViewController {
         return datePicker
     }()
     
-    init(viewModel: ScreenBViewModel, completion: String){
+    init(viewModel: BViewModel, completion: String){
         self.viewModel = viewModel
         self.completion = completion
         super.init(nibName: nil, bundle: nil)

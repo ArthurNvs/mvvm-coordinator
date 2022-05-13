@@ -1,14 +1,13 @@
 import Foundation
 
-class ScreenAViewModel {
+class CViewModel {
     var coordinator: MainCoordinator
-    public var completionHandler: String?
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
     
-    func goToScreenB() {
-        coordinator.goToB(completionHandler!)
+    func goToScreenA() {
+        coordinator.goToA()
     }
 }
