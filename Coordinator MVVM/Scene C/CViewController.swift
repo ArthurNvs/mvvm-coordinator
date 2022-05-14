@@ -37,7 +37,7 @@ class CViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .black
         title = "Screen C"
         
         view.addSubview(button)
