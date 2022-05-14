@@ -63,8 +63,9 @@ class AViewController: UIViewController {
     }
     
     @objc func didTapButton() {
+        guard let name = nameTextField.text, let lastName = lastNameTextField.text else { return }
         if (nameTextField.text != "" && lastNameTextField.text != "") {
-            viewModelFactory.fullName = nameTextField.text! + " " + lastNameTextField.text!
+            viewModelFactory.aModel = AModel(firstName: name, lastName: lastName)
             viewModelFactory.goToScreenB()
         } else {
             showAlertMessage(title: "Ooops!", message: "Please insert name and last name")

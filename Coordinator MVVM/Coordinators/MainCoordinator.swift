@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
-    var children: [Coordinator] = []
+    var childrens: [Coordinator] = []
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -19,9 +19,9 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(screenAViewController, animated: true)
     }
     
-    func goToB(_ completion: String) {
+    func goToB(_ aModel: AModel) {
         let screenBViewModel = BViewModel(coordinator: self)
-        let screenBViewController = BViewController(viewModel: screenBViewModel, completion: completion)
+        let screenBViewController = BViewController(viewModel: screenBViewModel, aModel: aModel)
         navigationController.pushViewController(screenBViewController, animated: true)
     }
     

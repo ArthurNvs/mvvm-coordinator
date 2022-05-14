@@ -3,7 +3,7 @@ import UIKit
 
 class BViewController: UIViewController {
     var viewModel: BViewModel
-    public var completion: String
+    var aModel: AModel
     
     private lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -13,9 +13,21 @@ class BViewController: UIViewController {
         return datePicker
     }()
     
-    init(viewModel: BViewModel, completion: String){
+    private lazy var button: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.center = view.center
+        button.backgroundColor = .systemBlue
+        button.setTitle("Submit", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 25)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        return button
+    }()
+    
+    init(viewModel: BViewModel, aModel: AModel){
         self.viewModel = viewModel
-        self.completion = completion
+        self.aModel = aModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,20 +37,32 @@ class BViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-        title = completion
-        view.addSubview(datePicker)
+        view.backgroundColor = .white
+        title = aModel.firstName + " " + aModel.lastName
         
-//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 220, height: 55))
-//        view.addSubview(button)
-//        button.center = view.center
-//        button.backgroundColor = .systemBlue
-//        button.setTitle("Screen C", for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        view.addSubview(datePicker)
+        view.addSubview(button)
+        configureSubviewsConstraints()
+        
     }
     
     @objc func didTapButton() {
         viewModel.goToScreenC()
+    }
+}
+
+private extension BViewController {
+    func configureSubviewsConstraints() {
+        NSLayoutConstraint.activate([
+            self.datePicker.leadingAnchor.constraint(equalTo: button.leadingAnchor),
+            self.datePicker.trailingAnchor.constraint(equalTo: button.trailingAnchor),
+            self.datePicker.bottomAnchor.constraint(equalTo: button.topAnchor),
+            
+            self.button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            self.button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            self.button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            self.button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            self.button.heightAnchor.constraint(equalToConstant: 40)
+        ])
     }
 }

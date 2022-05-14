@@ -18,6 +18,7 @@
 		8B5333BF2822D2C3007FF590 /* AViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333BE2822D2C3007FF590 /* AViewModel.swift */; };
 		8B5333C32822D73F007FF590 /* BViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333C22822D73F007FF590 /* BViewModel.swift */; };
 		8B5333C52822D7F1007FF590 /* CViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333C42822D7F1007FF590 /* CViewModel.swift */; };
+		8BB935F1282FCE3600800353 /* AModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB935F0282FCE3600800353 /* AModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8B5333BE2822D2C3007FF590 /* AViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewModel.swift; sourceTree = "<group>"; };
 		8B5333C22822D73F007FF590 /* BViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewModel.swift; sourceTree = "<group>"; };
 		8B5333C42822D7F1007FF590 /* CViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewModel.swift; sourceTree = "<group>"; };
+		8BB935F0282FCE3600800353 /* AModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				8B5333BE2822D2C3007FF590 /* AViewModel.swift */,
 				8B5333A0282198B4007FF590 /* AViewController.swift */,
+				8BB935F0282FCE3600800353 /* AModel.swift */,
 			);
 			path = "Scene A";
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5333B52821A5DC007FF590 /* BViewController.swift in Sources */,
+				8BB935F1282FCE3600800353 /* AModel.swift in Sources */,
 				8B5333B128219B9C007FF590 /* Coordinator.swift in Sources */,
 				8B5333A1282198B4007FF590 /* AViewController.swift in Sources */,
 				8B5333BF2822D2C3007FF590 /* AViewModel.swift in Sources */,

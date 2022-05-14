@@ -2,14 +2,14 @@ import Foundation
 
 class AViewModel {
     var coordinator: MainCoordinator
-    public var fullName: String?
+    var aModel: AModel?
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
     
     func goToScreenB() {
-        guard let fullName = fullName else { return }
-        coordinator.goToB(fullName)
+        guard let aModel = self.aModel else { return }
+        coordinator.goToB(aModel)
     }
 }
