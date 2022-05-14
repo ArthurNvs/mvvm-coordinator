@@ -63,19 +63,11 @@ class AViewController: UIViewController {
     }
     
     @objc func didTapButton() {
-        guard let name = nameTextField.text, let lastName = lastNameTextField.text else { return }
-        if (nameTextField.text != "" && lastNameTextField.text != "") {
+        guard let name = nameTextField.text, !name.isEmpty, let lastName = lastNameTextField.text, !lastName.isEmpty else {
+            return showAlertMessage(title: "Ooops!", message: "Please insert name and last name", action: "Ok!", self)
+        }
             viewModelFactory.aModel = AModel(firstName: name, lastName: lastName)
             viewModelFactory.goToScreenB()
-        } else {
-            showAlertMessage(title: "Ooops!", message: "Please insert name and last name")
-        }
-    }
-    
-    private func showAlertMessage(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "I'll do it!", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
     }
 }
 
