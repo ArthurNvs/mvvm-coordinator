@@ -59,13 +59,23 @@ class BViewController: UIViewController {
     @objc func didTapButton() {
         let fullName = aModel.firstName + " " + aModel.lastName
         let dateFormatter = DateFormatter()
-
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.timeStyle = DateFormatter.Style.none
-        let birthDay = dateFormatter.string(from: datePicker.date)
         
-        viewModelFactory.bModel = BModel(fullName: fullName, birthDate: birthDay)
-        viewModelFactory.goToScreenC()
+        if datePicker.date <= Date.now {
+            dateFormatter.dateStyle = DateFormatter.Style.short
+            dateFormatter.timeStyle = DateFormatter.Style.none
+            let birthDay = dateFormatter.string(from: datePicker.date)
+            
+            viewModelFactory.bModel = BModel(fullName: fullName, birthDate: birthDay)
+            viewModelFactory.goToScreenC()
+        } else {
+            showAlertMessage(title: "Ooops!", message: "You can't be born tomorrow")
+        }
+    }
+    
+    private func showAlertMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "I'll do it!", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

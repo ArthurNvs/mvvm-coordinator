@@ -27,7 +27,7 @@ class MainCoordinator: Coordinator {
     
     func goToC(_ bModel: BModel) {
         let screenCViewModel = CViewModel(coordinator: self)
-        let screenCViewController = CViewController(viewModel: screenCViewModel)
+        let screenCViewController = CViewController(viewModel: screenCViewModel, bModel: bModel)
         navigationController.pushViewController(screenCViewController, animated: true)
     }
     
