@@ -74,7 +74,7 @@ class BViewController: UIViewController {
     
     private func showAlertMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "I'll do it!", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Sorry!", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
 }
