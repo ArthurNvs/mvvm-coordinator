@@ -2,12 +2,21 @@ import Foundation
 import UIKit
 
 class BViewController: UIViewController {
-    var viewModel: BViewModel
+    var viewModelFactory: BViewModel
     var aModel: AModel
+    
+    private lazy var label: UILabel = {
+        let text = UILabel()
+        text.translatesAutoresizingMaskIntoConstraints = false
+        text.textColor = UIColor.systemBlue
+        text.text = "select your birth day: "
+        return text
+    }()
     
     private lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
-        datePicker.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.backgroundColor = UIColor.white
         return datePicker
@@ -26,7 +35,7 @@ class BViewController: UIViewController {
     }()
     
     init(viewModel: BViewModel, aModel: AModel){
-        self.viewModel = viewModel
+        self.viewModelFactory = viewModel
         self.aModel = aModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,25 +47,36 @@ class BViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = aModel.firstName + " " + aModel.lastName
+        title = "Screen B"
         
-        view.addSubview(datePicker)
         view.addSubview(button)
+        view.addSubview(datePicker)
+        view.addSubview(label)
         configureSubviewsConstraints()
         
     }
     
     @objc func didTapButton() {
-        viewModel.goToScreenC()
+        let fullName = aModel.firstName + " " + aModel.lastName
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        let birthDay = dateFormatter.string(from: datePicker.date)
+        
+        viewModelFactory.bModel = BModel(fullName: fullName, birthDate: birthDay)
+        viewModelFactory.goToScreenC()
     }
 }
 
 private extension BViewController {
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            self.datePicker.leadingAnchor.constraint(equalTo: button.leadingAnchor),
-            self.datePicker.trailingAnchor.constraint(equalTo: button.trailingAnchor),
-            self.datePicker.bottomAnchor.constraint(equalTo: button.topAnchor),
+            self.label.leadingAnchor.constraint(equalTo: button.leadingAnchor),
+            self.label.bottomAnchor.constraint(equalTo: datePicker.topAnchor, constant: -10),
+            
+            self.datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            self.datePicker.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -80),
             
             self.button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             self.button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
