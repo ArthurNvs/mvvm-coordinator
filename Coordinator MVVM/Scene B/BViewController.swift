@@ -79,8 +79,7 @@ class BViewController: UIViewController {
         dateFormatter.timeStyle = DateFormatter.Style.none
         let birthDay = dateFormatter.string(from: datePicker.date)
         
-        viewModelFactory.bModel = BModel(fullName: fullName, birthDay: birthDay)
-        viewModelFactory.goToScreenC()
+        viewModelFactory.didButtonTapAction(fullName: fullName, birthDay: birthDay)
     }
 }
 

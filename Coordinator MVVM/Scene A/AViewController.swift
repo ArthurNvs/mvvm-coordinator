@@ -75,8 +75,7 @@ class AViewController: UIViewController {
         guard let name = nameTextField.text, !name.isEmpty, let lastName = lastNameTextField.text, !lastName.isEmpty else {
             return showAlertMessage(title: "Ooops!", message: "Please insert name and last name", action: "Ok!")
         }
-            viewModelFactory.aModel = AModel(firstName: name, lastName: lastName)
-            viewModelFactory.goToScreenB()
+            viewModelFactory.didButtonTapAction(firstName: name, lastName: lastName)
     }
 }
 
@@ -87,9 +86,6 @@ private extension AViewController {
             self.stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
             self.stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             self.stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            //self.stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
-            //self.stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            //self.stackView.heightAnchor.constraint(equalToConstant: 50),
             
             self.lastNameTextField.heightAnchor.constraint(equalToConstant: 40),
             self.lastNameTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor),
