@@ -73,7 +73,7 @@ class AViewController: UIViewController {
     
     @objc func didTapButton() {
         guard let name = nameTextField.text, !name.isEmpty, let lastName = lastNameTextField.text, !lastName.isEmpty else {
-            return showAlertMessage(title: "Ooops!", message: "Please insert name and last name", action: "Ok!", self)
+            return showAlertMessage(title: "Ooops!", message: "Please insert name and last name", action: "Ok!")
         }
             viewModelFactory.aModel = AModel(firstName: name, lastName: lastName)
             viewModelFactory.goToScreenB()

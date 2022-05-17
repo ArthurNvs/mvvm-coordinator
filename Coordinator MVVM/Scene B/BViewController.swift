@@ -73,7 +73,7 @@ class BViewController: UIViewController {
         let dateFormatter = DateFormatter()
         
         guard datePicker.date <= Date.now else {
-            return showAlertMessage(title: "Ooops!", message: "You can't be born tomorrow", action: "Sorry!", self)
+            return showAlertMessage(title: "Ooops!", message: "You can't be born tomorrow", action: "Sorry!")
         }
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.none
