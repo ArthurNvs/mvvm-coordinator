@@ -34,6 +34,20 @@ class BViewController: UIViewController {
         return button
     }()
     
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 20
+        
+        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(datePicker)
+        stackView.addArrangedSubview(button)
+        return stackView
+    }()
+    
     init(viewModel: BViewModel, aModel: AModel){
         self.viewModelFactory = viewModel
         self.aModel = aModel
@@ -49,9 +63,7 @@ class BViewController: UIViewController {
         view.backgroundColor = .white
         title = "Screen B"
         
-        view.addSubview(button)
-        view.addSubview(datePicker)
-        view.addSubview(label)
+        view.addSubview(stackView)
         configureSubviewsConstraints()
         
     }
@@ -60,39 +72,30 @@ class BViewController: UIViewController {
         let fullName = aModel.firstName + " " + aModel.lastName
         let dateFormatter = DateFormatter()
         
-        if datePicker.date <= Date.now {
-            dateFormatter.dateStyle = DateFormatter.Style.short
-            dateFormatter.timeStyle = DateFormatter.Style.none
-            let birthDay = dateFormatter.string(from: datePicker.date)
-            
-            viewModelFactory.bModel = BModel(fullName: fullName, birthDate: birthDay)
-            viewModelFactory.goToScreenC()
-        } else {
-            showAlertMessage(title: "Ooops!", message: "You can't be born tomorrow")
+        guard datePicker.date <= Date.now else {
+            return showAlertMessage(title: "Ooops!", message: "You can't be born tomorrow", action: "Sorry!")
         }
-    }
-    
-    private func showAlertMessage(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Sorry!", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        let birthDay = dateFormatter.string(from: datePicker.date)
+        
+        viewModelFactory.didButtonTapAction(fullName: fullName, birthDay: birthDay)
     }
 }
 
 private extension BViewController {
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            self.label.leadingAnchor.constraint(equalTo: button.leadingAnchor),
-            self.label.bottomAnchor.constraint(equalTo: datePicker.topAnchor, constant: -10),
+            self.stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
+            self.stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            self.stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            self.label.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             
             self.datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            self.datePicker.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -80),
             
-            self.button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            self.button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            self.button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            self.button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            self.button.heightAnchor.constraint(equalToConstant: 40)
+            self.button.heightAnchor.constraint(equalToConstant: 40),
+            self.button.widthAnchor.constraint(equalTo: stackView.widthAnchor)
         ])
     }
 }

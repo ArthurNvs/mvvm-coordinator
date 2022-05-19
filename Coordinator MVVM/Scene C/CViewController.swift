@@ -25,6 +25,19 @@ class CViewController: UIViewController {
         return button
     }()
     
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 20
+        
+        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(button)
+        return stackView
+    }()
+    
     init(viewModel: CViewModel, bModel: BModel){
         self.viewModel = viewModel
         self.bModel = bModel
@@ -37,11 +50,10 @@ class CViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .black
         title = "Screen C"
         
-        view.addSubview(button)
-        view.addSubview(label)
+        view.addSubview(stackView)
         configureSubviewsConstraints()
     }
     
@@ -68,14 +80,14 @@ class CViewController: UIViewController {
 private extension CViewController {
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            self.label.leadingAnchor.constraint(equalTo: button.leadingAnchor),
-            self.label.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -10),
+            self.stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
+            self.stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            self.stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
-            self.button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            self.button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            self.button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            self.button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            self.button.heightAnchor.constraint(equalToConstant: 40)
+            self.label.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            
+            self.button.heightAnchor.constraint(equalToConstant: 40),
+            self.button.widthAnchor.constraint(equalTo: stackView.widthAnchor)
         ])
     }
 }

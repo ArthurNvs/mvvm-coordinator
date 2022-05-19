@@ -20,6 +20,7 @@
 		8B5333C52822D7F1007FF590 /* CViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333C42822D7F1007FF590 /* CViewModel.swift */; };
 		8BB935F1282FCE3600800353 /* AModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB935F0282FCE3600800353 /* AModel.swift */; };
 		8BB935F3282FE46B00800353 /* BModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB935F2282FE46B00800353 /* BModel.swift */; };
+		8BD38BF228303D8F00F8EB41 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD38BF128303D8F00F8EB41 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8B5333C42822D7F1007FF590 /* CViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewModel.swift; sourceTree = "<group>"; };
 		8BB935F0282FCE3600800353 /* AModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AModel.swift; sourceTree = "<group>"; };
 		8BB935F2282FE46B00800353 /* BModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BModel.swift; sourceTree = "<group>"; };
+		8BD38BF128303D8F00F8EB41 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				8B5333C12822D728007FF590 /* Scene A */,
 				8B5333C02822D721007FF590 /* Scene B */,
 				8B643052282DE30D00C1F7BA /* Scene C */,
+				8BD38BF328303D9200F8EB41 /* Helpers */,
 				8B5333A5282198B5007FF590 /* Assets.xcassets */,
 				8B5333A7282198B5007FF590 /* LaunchScreen.storyboard */,
 				8B5333AA282198B5007FF590 /* Info.plist */,
@@ -118,6 +121,14 @@
 				8B5333B82822B8D7007FF590 /* CViewController.swift */,
 			);
 			path = "Scene C";
+			sourceTree = "<group>";
+		};
+		8BD38BF328303D9200F8EB41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8BD38BF128303D8F00F8EB41 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				8B5333A1282198B4007FF590 /* AViewController.swift in Sources */,
 				8B5333BF2822D2C3007FF590 /* AViewModel.swift in Sources */,
 				8B53339D282198B4007FF590 /* AppDelegate.swift in Sources */,
+				8BD38BF228303D8F00F8EB41 /* Extensions.swift in Sources */,
 				8B5333C52822D7F1007FF590 /* CViewModel.swift in Sources */,
 				8B5333B328219CF1007FF590 /* MainCoordinator.swift in Sources */,
 				8B5333B92822B8D7007FF590 /* CViewController.swift in Sources */,
