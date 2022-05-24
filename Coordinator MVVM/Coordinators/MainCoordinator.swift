@@ -14,21 +14,14 @@ class MainCoordinator: Coordinator {
     }
     
     func goToA() {
-        let screenAViewModel = AViewModel(coordinator: self)
-        let screenAViewController = AViewController(viewModel: screenAViewModel)
-        navigationController.pushViewController(screenAViewController, animated: true)
+        navigationController.pushViewController(makeAViewController(coordinator: self), animated: true)
     }
     
     func goToB(_ aModel: AModel) {
-        let screenBViewModel = BViewModel(coordinator: self)
-        let screenBViewController = BViewController(viewModel: screenBViewModel, aModel: aModel)
-        navigationController.pushViewController(screenBViewController, animated: true)
+        navigationController.pushViewController(makeBViewController(coordinator: self, aModel: aModel), animated: true)
     }
     
     func goToC(_ bModel: BModel) {
-        let screenCViewModel = CViewModel(coordinator: self)
-        let screenCViewController = CViewController(viewModel: screenCViewModel, bModel: bModel)
-        navigationController.pushViewController(screenCViewController, animated: true)
+        navigationController.pushViewController(makeCViewController(coordinator: self, bModel: bModel), animated: true)
     }
-    
 }

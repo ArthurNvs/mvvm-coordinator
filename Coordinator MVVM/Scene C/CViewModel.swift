@@ -7,7 +7,7 @@ class CViewModel {
         self.coordinator = coordinator
     }
     
-    func goToScreenA() {
+    func didButtonTapAction() {
         coordinator.goToA()
     }
 }

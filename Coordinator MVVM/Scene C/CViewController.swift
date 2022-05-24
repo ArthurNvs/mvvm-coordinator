@@ -60,7 +60,7 @@ class CViewController: UIViewController {
     @objc func didTapButton() {
         
         print(setAgeWithBirthDay())
-        viewModel.goToScreenA()
+        viewModel.didButtonTapAction()
     }
     
     func setAgeWithBirthDay() -> Int {

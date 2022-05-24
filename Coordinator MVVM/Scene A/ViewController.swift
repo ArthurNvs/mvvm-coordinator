@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class AViewController: UIViewController {
-    var viewModelFactory: AViewModel
+    var viewModelFactory: ViewModel
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -53,7 +53,7 @@ class AViewController: UIViewController {
         return stackView
     }()
     
-    init(viewModel: AViewModel){
+    init(viewModel: ViewModel){
         self.viewModelFactory = viewModel
         super.init(nibName: nil, bundle: nil)
     }
