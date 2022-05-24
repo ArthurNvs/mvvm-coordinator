@@ -3,8 +3,8 @@ import UIKit
 
 enum Screen {
     case A
-    case B
-    case C
+    case B(AModel)
+    case C(BModel)
 }
 
 protocol Coordinator {
@@ -12,6 +12,6 @@ protocol Coordinator {
     var navigationController: UINavigationController { get set }
     
     func start()
-    func navigateTo(screen: Screen, model: Any?)
+    func navigateTo(screen: Screen)
     func pushTo(viewController: UIViewController)
 }

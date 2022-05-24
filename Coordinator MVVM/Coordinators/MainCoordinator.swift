@@ -13,14 +13,13 @@ class MainCoordinator: Coordinator {
         pushTo(viewController: makeAViewController(coordinator: self))
     }
     
-    func navigateTo(screen: Screen, model: Any?) {
+    func navigateTo(screen: Screen) {
         switch screen {
         case .A: pushTo(viewController: makeAViewController(coordinator: self))
-        case .B: pushTo(viewController: makeBViewController(coordinator: self, aModel: model as! AModel))
-        case .C: pushTo(viewController: makeCViewController(coordinator: self, bModel: model as! BModel))
+        case let .B(aModel): pushTo(viewController: makeBViewController(coordinator: self, aModel: aModel))
+        case let .C(bModel): pushTo(viewController: makeCViewController(coordinator: self, bModel: bModel))
         }
     }
-    
     
     func pushTo(viewController: UIViewController) {
         navigationController.pushViewController(viewController, animated: true)

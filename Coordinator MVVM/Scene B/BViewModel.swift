@@ -8,6 +8,6 @@ class BViewModel: ViewModelB {
     }
     
     func didButtonTapAction(fullName: String, birthDay: String) {
-        coordinator.navigateTo(screen: .C, model: BModel(fullName: fullName, birthDay: birthDay))
+        coordinator.navigateTo(screen: .C(BModel(fullName: fullName, birthDay: birthDay)))
     }
 }

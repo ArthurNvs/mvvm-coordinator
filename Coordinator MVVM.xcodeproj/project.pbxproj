@@ -150,9 +150,9 @@
 		8B643052282DE30D00C1F7BA /* Scene C */ = {
 			isa = PBXGroup;
 			children = (
-				8B328156283D782E00D65FAA /* ViewModelC.swift */,
 				8B5333C42822D7F1007FF590 /* CViewModel.swift */,
 				8B5333B82822B8D7007FF590 /* CViewController.swift */,
+				8B328156283D782E00D65FAA /* ViewModelC.swift */,
 			);
 			path = "Scene C";
 			sourceTree = "<group>";
