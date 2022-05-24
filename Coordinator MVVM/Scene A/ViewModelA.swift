@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ViewModel {
+protocol ViewModelA {
     var coordinator: MainCoordinator { get set }
     
     func didButtonTapAction(firstName: String, lastName: String)

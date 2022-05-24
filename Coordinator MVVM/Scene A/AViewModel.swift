@@ -1,6 +1,6 @@
 import Foundation
 
-class AViewModel: ViewModel {
+class AViewModel: ViewModelA {
     var coordinator: MainCoordinator
     
     init(coordinator: MainCoordinator) {
