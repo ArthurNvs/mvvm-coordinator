@@ -10,18 +10,19 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        goToA()
+        pushTo(viewController: makeAViewController(coordinator: self))
     }
     
-    func goToA() {
-        navigationController.pushViewController(makeAViewController(coordinator: self), animated: true)
+    func navigateTo(screen: Screen, model: Any?) {
+        switch screen {
+        case .A: pushTo(viewController: makeAViewController(coordinator: self))
+        case .B: pushTo(viewController: makeBViewController(coordinator: self, aModel: model as! AModel))
+        case .C: pushTo(viewController: makeCViewController(coordinator: self, bModel: model as! BModel))
+        }
     }
     
-    func goToB(_ aModel: AModel) {
-        navigationController.pushViewController(makeBViewController(coordinator: self, aModel: aModel), animated: true)
-    }
     
-    func goToC(_ bModel: BModel) {
-        navigationController.pushViewController(makeCViewController(coordinator: self, bModel: bModel), animated: true)
+    func pushTo(viewController: UIViewController) {
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

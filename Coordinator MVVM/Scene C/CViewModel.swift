@@ -8,6 +8,6 @@ class CViewModel: ViewModelC {
     }
     
     func didButtonTapAction() {
-        coordinator.goToA()
+        coordinator.navigateTo(screen: .A, model: nil)
     }
 }

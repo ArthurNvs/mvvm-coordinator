@@ -58,7 +58,6 @@ class CViewController: UIViewController {
     }
     
     @objc func didTapButton() {
-        
         print(setAgeWithBirthDay())
         viewModel.didButtonTapAction()
     }
