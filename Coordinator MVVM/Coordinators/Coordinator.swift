@@ -4,7 +4,7 @@ import UIKit
 enum Screen {
     case A
     case B(HomeModel)
-    case C(BModel)
+    case C(BirthDayModel)
 }
 
 protocol Coordinator {

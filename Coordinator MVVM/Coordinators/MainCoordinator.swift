@@ -17,7 +17,7 @@ class MainCoordinator: Coordinator {
         switch screen {
         case .A: openModal(viewController: makeAViewController(coordinator: self))
         case let .B(aModel): openModal(viewController: makeBViewController(coordinator: self, aModel: aModel))
-        case let .C(bModel): openModal(viewController: makeCViewController(coordinator: self, bModel: bModel))
+        case let .C(bModel): openModal(viewController: makeCViewController(coordinator: self, birthDayModel: bModel))
         }
     }
     

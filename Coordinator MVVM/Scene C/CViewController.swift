@@ -3,13 +3,13 @@ import UIKit
 
 class CViewController: UIViewController {
     var viewModel: CViewModel
-    var bModel: BModel
+    var birthDayModel: BirthDayModel
     
     private lazy var label: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.textColor = UIColor.systemBlue
-        text.text = "\(bModel.fullName), \(setAgeWithBirthDay()) years old."
+        text.text = "\(birthDayModel.fullName), \(setAgeWithBirthDay()) years old."
         return text
     }()
     
@@ -38,9 +38,9 @@ class CViewController: UIViewController {
         return stackView
     }()
     
-    init(viewModel: CViewModel, bModel: BModel){
+    init(viewModel: CViewModel, birthDayModel: BirthDayModel){
         self.viewModel = viewModel
-        self.bModel = bModel
+        self.birthDayModel = birthDayModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -68,7 +68,7 @@ class CViewController: UIViewController {
         dateFormatter.timeStyle = DateFormatter.Style.none
         dateFormatter.dateFormat = "dd/MM/yy"
         
-        let birthDay = dateFormatter.date(from: bModel.birthDay)
+        let birthDay = dateFormatter.date(from: birthDayModel.birthDay)
         let age = birthDay?.age
         
         return age!

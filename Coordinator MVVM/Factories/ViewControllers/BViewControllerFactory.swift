@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
 
-func makeBViewController(coordinator: MainCoordinator, aModel: HomeModel) -> BViewController {
-    BViewController(viewModel: BViewModel(coordinator: coordinator), aModel: aModel)
+func makeBViewController(coordinator: MainCoordinator, aModel: HomeModel) -> BirthDayViewController {
+    BirthDayViewController(viewModel: BirthDayViewModel(coordinator: coordinator), aModel: aModel)
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-struct BModel {
+struct BirthDayModel {
     var fullName: String
     var birthDay: String
 }
