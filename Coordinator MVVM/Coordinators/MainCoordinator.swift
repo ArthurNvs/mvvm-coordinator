@@ -10,18 +10,23 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        pushTo(viewController: makeAViewController(coordinator: self))
+        navigationController.pushViewController(HomeViewController(viewModel: HomeViewModel(coordinator: self)), animated: true)
     }
     
     func navigateTo(screen: Screen) {
         switch screen {
-        case .A: pushTo(viewController: makeAViewController(coordinator: self))
-        case let .B(aModel): pushTo(viewController: makeBViewController(coordinator: self, aModel: aModel))
-        case let .C(bModel): pushTo(viewController: makeCViewController(coordinator: self, bModel: bModel))
+        case .A: openModal(viewController: makeAViewController(coordinator: self))
+        case let .B(aModel): openModal(viewController: makeBViewController(coordinator: self, aModel: aModel))
+        case let .C(bModel): openModal(viewController: makeCViewController(coordinator: self, bModel: bModel))
         }
     }
     
-    func pushTo(viewController: UIViewController) {
-        navigationController.pushViewController(viewController, animated: true)
+    func openModal(viewController: UIViewController) {
+        dismissModal()
+        navigationController.present(viewController, animated: true)
+    }
+    
+    func dismissModal() {
+        navigationController.dismiss(animated: true)
     }
 }

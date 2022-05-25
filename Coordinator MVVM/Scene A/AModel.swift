@@ -1,6 +1,6 @@
 import Foundation
 
-struct AModel {
+struct HomeModel {
     var firstName: String
     var lastName: String
 }

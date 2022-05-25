@@ -3,7 +3,7 @@ import UIKit
 
 enum Screen {
     case A
-    case B(AModel)
+    case B(HomeModel)
     case C(BModel)
 }
 
@@ -13,5 +13,5 @@ protocol Coordinator {
     
     func start()
     func navigateTo(screen: Screen)
-    func pushTo(viewController: UIViewController)
+    func openModal(viewController: UIViewController)
 }

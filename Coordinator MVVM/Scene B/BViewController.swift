@@ -3,7 +3,7 @@ import UIKit
 
 class BViewController: UIViewController {
     var viewModelFactory: BViewModel
-    var aModel: AModel
+    var aModel: HomeModel
     
     private lazy var label: UILabel = {
         let text = UILabel()
@@ -48,7 +48,7 @@ class BViewController: UIViewController {
         return stackView
     }()
     
-    init(viewModel: BViewModel, aModel: AModel){
+    init(viewModel: BViewModel, aModel: HomeModel){
         self.viewModelFactory = viewModel
         self.aModel = aModel
         super.init(nibName: nil, bundle: nil)

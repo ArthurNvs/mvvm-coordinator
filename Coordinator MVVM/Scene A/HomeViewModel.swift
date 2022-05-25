@@ -1,6 +1,6 @@
 import Foundation
 
-class AViewModel: ViewModelA {
+class HomeViewModel: HomeView {
     var coordinator: MainCoordinator
     
     init(coordinator: MainCoordinator) {
@@ -8,6 +8,6 @@ class AViewModel: ViewModelA {
     }
     
     func didButtonTapAction(firstName: String, lastName: String) {
-        coordinator.navigateTo(screen: .B(AModel(firstName: firstName, lastName: lastName)))
+        coordinator.navigateTo(screen: .B(HomeModel(firstName: firstName, lastName: lastName)))
     }
 }

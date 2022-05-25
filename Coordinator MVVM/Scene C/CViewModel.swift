@@ -8,6 +8,6 @@ class CViewModel: ViewModelC {
     }
     
     func didButtonTapAction() {
-        coordinator.navigateTo(screen: .A)
+        coordinator.dismissModal()
     }
 }

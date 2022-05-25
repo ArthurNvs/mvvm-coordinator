@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
 
-func makeAViewController(coordinator: MainCoordinator) -> AViewController {
-    AViewController(viewModel: AViewModel(coordinator: coordinator))
+func makeAViewController(coordinator: MainCoordinator) -> HomeViewController {
+    HomeViewController(viewModel: HomeViewModel(coordinator: coordinator))
 }
