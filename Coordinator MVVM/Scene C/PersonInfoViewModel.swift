@@ -1,6 +1,6 @@
 import Foundation
 
-class CViewModel: ViewModelC {
+class PersonInfoViewModel: PersonInfo {
     var coordinator: MainCoordinator
     
     init(coordinator: MainCoordinator) {

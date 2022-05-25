@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class CViewController: UIViewController {
-    var viewModel: CViewModel
+class PersonInfoViewController: UIViewController {
+    var viewModel: PersonInfoViewModel
     var birthDayModel: BirthDayModel
     
     private lazy var label: UILabel = {
@@ -38,7 +38,7 @@ class CViewController: UIViewController {
         return stackView
     }()
     
-    init(viewModel: CViewModel, birthDayModel: BirthDayModel){
+    init(viewModel: PersonInfoViewModel, birthDayModel: BirthDayModel){
         self.viewModel = viewModel
         self.birthDayModel = birthDayModel
         super.init(nibName: nil, bundle: nil)
@@ -76,7 +76,7 @@ class CViewController: UIViewController {
     
 }
 
-private extension CViewController {
+private extension PersonInfoViewController {
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
             self.stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),

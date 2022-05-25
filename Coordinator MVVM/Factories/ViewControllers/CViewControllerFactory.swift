@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
 
-func makeCViewController(coordinator: MainCoordinator, birthDayModel: BirthDayModel) -> CViewController {
-    CViewController(viewModel: CViewModel(coordinator: coordinator), birthDayModel: birthDayModel)
+func makeCViewController(coordinator: MainCoordinator, birthDayModel: BirthDayModel) -> PersonInfoViewController {
+    PersonInfoViewController(viewModel: PersonInfoViewModel(coordinator: coordinator), birthDayModel: birthDayModel)
 }

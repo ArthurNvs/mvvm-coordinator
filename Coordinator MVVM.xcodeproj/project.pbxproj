@@ -12,7 +12,7 @@
 		8B328151283D763A00D65FAA /* AViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328150283D763A00D65FAA /* AViewControllerFactory.swift */; };
 		8B328153283D763F00D65FAA /* BViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328152283D763F00D65FAA /* BViewControllerFactory.swift */; };
 		8B328155283D774000D65FAA /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328154283D774000D65FAA /* BirthDay.swift */; };
-		8B328157283D782E00D65FAA /* ViewModelC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328156283D782E00D65FAA /* ViewModelC.swift */; };
+		8B328157283D782E00D65FAA /* PersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328156283D782E00D65FAA /* PersonInfo.swift */; };
 		8B53339D282198B4007FF590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53339C282198B4007FF590 /* AppDelegate.swift */; };
 		8B5333A1282198B4007FF590 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333A0282198B4007FF590 /* HomeViewController.swift */; };
 		8B5333A6282198B5007FF590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5333A5282198B5007FF590 /* Assets.xcassets */; };
@@ -20,10 +20,10 @@
 		8B5333B128219B9C007FF590 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333B028219B9C007FF590 /* Coordinator.swift */; };
 		8B5333B328219CF1007FF590 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333B228219CF1007FF590 /* MainCoordinator.swift */; };
 		8B5333B52821A5DC007FF590 /* BirthDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333B42821A5DC007FF590 /* BirthDayViewController.swift */; };
-		8B5333B92822B8D7007FF590 /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333B82822B8D7007FF590 /* CViewController.swift */; };
+		8B5333B92822B8D7007FF590 /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333B82822B8D7007FF590 /* PersonInfoViewController.swift */; };
 		8B5333BF2822D2C3007FF590 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333BE2822D2C3007FF590 /* HomeViewModel.swift */; };
 		8B5333C32822D73F007FF590 /* BirthDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333C22822D73F007FF590 /* BirthDayViewModel.swift */; };
-		8B5333C52822D7F1007FF590 /* CViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333C42822D7F1007FF590 /* CViewModel.swift */; };
+		8B5333C52822D7F1007FF590 /* PersonInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5333C42822D7F1007FF590 /* PersonInfoViewModel.swift */; };
 		8BB935F1282FCE3600800353 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB935F0282FCE3600800353 /* HomeModel.swift */; };
 		8BB935F3282FE46B00800353 /* BirthDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB935F2282FE46B00800353 /* BirthDayModel.swift */; };
 		8BD38BF228303D8F00F8EB41 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD38BF128303D8F00F8EB41 /* Extensions.swift */; };
@@ -35,7 +35,7 @@
 		8B328150283D763A00D65FAA /* AViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AViewControllerFactory.swift; sourceTree = "<group>"; };
 		8B328152283D763F00D65FAA /* BViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewControllerFactory.swift; sourceTree = "<group>"; };
 		8B328154283D774000D65FAA /* BirthDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDay.swift; sourceTree = "<group>"; };
-		8B328156283D782E00D65FAA /* ViewModelC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelC.swift; path = "Coordinator MVVM/Scene B/ViewModelC.swift"; sourceTree = SOURCE_ROOT; };
+		8B328156283D782E00D65FAA /* PersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonInfo.swift; path = "Coordinator MVVM/Scene B/PersonInfo.swift"; sourceTree = SOURCE_ROOT; };
 		8B533399282198B4007FF590 /* Coordinator MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordinator MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B53339C282198B4007FF590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B5333A0282198B4007FF590 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -45,10 +45,10 @@
 		8B5333B028219B9C007FF590 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8B5333B228219CF1007FF590 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8B5333B42821A5DC007FF590 /* BirthDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayViewController.swift; sourceTree = "<group>"; };
-		8B5333B82822B8D7007FF590 /* CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
+		8B5333B82822B8D7007FF590 /* PersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
 		8B5333BE2822D2C3007FF590 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8B5333C22822D73F007FF590 /* BirthDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayViewModel.swift; sourceTree = "<group>"; };
-		8B5333C42822D7F1007FF590 /* CViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewModel.swift; sourceTree = "<group>"; };
+		8B5333C42822D7F1007FF590 /* PersonInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewModel.swift; sourceTree = "<group>"; };
 		8BB935F0282FCE3600800353 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8BB935F2282FE46B00800353 /* BirthDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayModel.swift; sourceTree = "<group>"; };
 		8BD38BF128303D8F00F8EB41 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -150,9 +150,9 @@
 		8B643052282DE30D00C1F7BA /* Scene C */ = {
 			isa = PBXGroup;
 			children = (
-				8B5333C42822D7F1007FF590 /* CViewModel.swift */,
-				8B5333B82822B8D7007FF590 /* CViewController.swift */,
-				8B328156283D782E00D65FAA /* ViewModelC.swift */,
+				8B5333C42822D7F1007FF590 /* PersonInfoViewModel.swift */,
+				8B5333B82822B8D7007FF590 /* PersonInfoViewController.swift */,
+				8B328156283D782E00D65FAA /* PersonInfo.swift */,
 			);
 			path = "Scene C";
 			sourceTree = "<group>";
@@ -245,13 +245,13 @@
 				8B5333A1282198B4007FF590 /* HomeViewController.swift in Sources */,
 				8B5333BF2822D2C3007FF590 /* HomeViewModel.swift in Sources */,
 				8B328151283D763A00D65FAA /* AViewControllerFactory.swift in Sources */,
-				8B328157283D782E00D65FAA /* ViewModelC.swift in Sources */,
+				8B328157283D782E00D65FAA /* PersonInfo.swift in Sources */,
 				8B328149283D6BA700D65FAA /* HomeView.swift in Sources */,
 				8B53339D282198B4007FF590 /* AppDelegate.swift in Sources */,
 				8BD38BF228303D8F00F8EB41 /* Extensions.swift in Sources */,
-				8B5333C52822D7F1007FF590 /* CViewModel.swift in Sources */,
+				8B5333C52822D7F1007FF590 /* PersonInfoViewModel.swift in Sources */,
 				8B5333B328219CF1007FF590 /* MainCoordinator.swift in Sources */,
-				8B5333B92822B8D7007FF590 /* CViewController.swift in Sources */,
+				8B5333B92822B8D7007FF590 /* PersonInfoViewController.swift in Sources */,
 				8B5333C32822D73F007FF590 /* BirthDayViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
