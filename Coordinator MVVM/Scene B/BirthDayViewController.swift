@@ -48,9 +48,9 @@ class BirthDayViewController: UIViewController {
         return stackView
     }()
     
-    init(viewModel: BirthDayViewModel, aModel: HomeModel){
+    init(viewModel: BirthDayViewModel, homeModel: HomeModel){
         self.viewModelFactory = viewModel
-        self.homeModel = aModel
+        self.homeModel = homeModel
         super.init(nibName: nil, bundle: nil)
     }
     

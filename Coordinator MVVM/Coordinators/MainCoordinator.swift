@@ -15,9 +15,9 @@ class MainCoordinator: Coordinator {
     
     func navigateTo(screen: Screen) {
         switch screen {
-        case .A: openModal(viewController: makeAViewController(coordinator: self))
-        case let .B(aModel): openModal(viewController: makeBViewController(coordinator: self, aModel: aModel))
-        case let .C(bModel): openModal(viewController: makeCViewController(coordinator: self, birthDayModel: bModel))
+        case .A: openModal(viewController: makeHomeViewController(coordinator: self))
+        case let .B(homeModel): openModal(viewController: makeBirthDayViewController(coordinator: self, homeModel: homeModel))
+        case let .C(birthDayModel): openModal(viewController: makePersonInfoViewController(coordinator: self, birthDayModel: birthDayModel))
         }
     }
     
