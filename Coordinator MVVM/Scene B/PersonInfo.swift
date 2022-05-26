@@ -1,7 +1,7 @@
 import Foundation
 
 protocol PersonInfo {
-    var coordinator: MainCoordinator { get set }
+    var coordinator: Coordinator { get set }
     
     func didButtonTapAction()
 }

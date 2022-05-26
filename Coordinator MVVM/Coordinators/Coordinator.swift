@@ -14,4 +14,5 @@ protocol Coordinator {
     func start()
     func navigateTo(screen: Screen)
     func openModal(viewController: UIViewController)
+    func dismissModal()
 }

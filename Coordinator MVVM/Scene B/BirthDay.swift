@@ -1,7 +1,7 @@
 import Foundation
 
 protocol BirthDay {
-    var coordinator: MainCoordinator { get set }
+    var coordinator: Coordinator { get set }
     
     func didButtonTapAction(fullName: String, birthDay: String)
 }

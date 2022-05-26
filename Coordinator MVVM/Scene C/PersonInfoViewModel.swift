@@ -1,9 +1,9 @@
 import Foundation
 
 class PersonInfoViewModel: PersonInfo {
-    var coordinator: MainCoordinator
+    var coordinator: Coordinator
     
-    init(coordinator: MainCoordinator) {
+    init(coordinator: Coordinator) {
         self.coordinator = coordinator
     }
     

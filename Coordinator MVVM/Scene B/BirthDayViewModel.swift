@@ -1,7 +1,7 @@
 import Foundation
 
 class BirthDayViewModel: BirthDay {
-    var coordinator: MainCoordinator
+    var coordinator: Coordinator
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator

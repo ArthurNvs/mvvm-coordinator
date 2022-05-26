@@ -1,7 +1,7 @@
 import Foundation
 
 class HomeViewModel: HomeView {
-    var coordinator: MainCoordinator
+    var coordinator: Coordinator
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
