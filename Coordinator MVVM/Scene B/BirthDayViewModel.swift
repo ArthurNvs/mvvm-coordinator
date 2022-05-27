@@ -1,13 +1,13 @@
 import Foundation
 
-class BViewModel {
-    var coordinator: MainCoordinator
+class BirthDayViewModel: BirthDay {
+    var coordinator: Coordinator
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
     
     func didButtonTapAction(fullName: String, birthDay: String) {
-        coordinator.goToC(BModel(fullName: fullName, birthDay: birthDay))
+        coordinator.navigateTo(screen: .C(BirthDayModel(fullName: fullName, birthDay: birthDay)))
     }
 }

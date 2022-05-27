@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class AViewController: UIViewController {
-    var viewModelFactory: AViewModel
+class HomeViewController: UIViewController {
+    var viewModelFactory: HomeView
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -53,7 +53,7 @@ class AViewController: UIViewController {
         return stackView
     }()
     
-    init(viewModel: AViewModel){
+    init(viewModel: HomeView){
         self.viewModelFactory = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,9 +64,12 @@ class AViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         title = "Screen A"
-        
+        setupView()
+    }
+    
+    func setupView() {
+        view.backgroundColor = .white
         view.addSubview(stackView)
         configureSubviewsConstraints()
     }
@@ -79,7 +82,7 @@ class AViewController: UIViewController {
     }
 }
 
-private extension AViewController {
+private extension HomeViewController {
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
             

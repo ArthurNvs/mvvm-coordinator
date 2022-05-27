@@ -1,9 +1,9 @@
 import Foundation
 import UIKit
 
-class BViewController: UIViewController {
-    var viewModelFactory: BViewModel
-    var aModel: AModel
+class BirthDayViewController: UIViewController {
+    var viewModelFactory: BirthDayViewModel
+    var homeModel: HomeModel
     
     private lazy var label: UILabel = {
         let text = UILabel()
@@ -48,9 +48,9 @@ class BViewController: UIViewController {
         return stackView
     }()
     
-    init(viewModel: BViewModel, aModel: AModel){
+    init(viewModel: BirthDayViewModel, homeModel: HomeModel){
         self.viewModelFactory = viewModel
-        self.aModel = aModel
+        self.homeModel = homeModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -69,7 +69,7 @@ class BViewController: UIViewController {
     }
     
     @objc func didTapButton() {
-        let fullName = aModel.firstName + " " + aModel.lastName
+        let fullName = homeModel.firstName + " " + homeModel.lastName
         let dateFormatter = DateFormatter()
         
         guard datePicker.date <= Date.now else {
@@ -83,7 +83,7 @@ class BViewController: UIViewController {
     }
 }
 
-private extension BViewController {
+private extension BirthDayViewController {
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
             self.stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
