@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B14070A285525BA00556B73 /* PersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B140709285525BA00556B73 /* PersonInfo.swift */; };
-		8B328149283D6BA700D65FAA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328148283D6BA700D65FAA /* HomeView.swift */; };
+		8B328149283D6BA700D65FAA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328148283D6BA700D65FAA /* Home.swift */; };
 		8B32814D283D731200D65FAA /* PersonInfoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B32814C283D731200D65FAA /* PersonInfoViewControllerFactory.swift */; };
 		8B328151283D763A00D65FAA /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328150283D763A00D65FAA /* HomeViewControllerFactory.swift */; };
 		8B328153283D763F00D65FAA /* BirthDayViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B328152283D763F00D65FAA /* BirthDayViewControllerFactory.swift */; };
@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		8B140709285525BA00556B73 /* PersonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfo.swift; sourceTree = "<group>"; };
-		8B328148283D6BA700D65FAA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8B328148283D6BA700D65FAA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		8B32814C283D731200D65FAA /* PersonInfoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewControllerFactory.swift; sourceTree = "<group>"; };
 		8B328150283D763A00D65FAA /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
 		8B328152283D763F00D65FAA /* BirthDayViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthDayViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				8B5333BE2822D2C3007FF590 /* HomeViewModel.swift */,
 				8B5333A0282198B4007FF590 /* HomeViewController.swift */,
 				8BB935F0282FCE3600800353 /* HomeModel.swift */,
-				8B328148283D6BA700D65FAA /* HomeView.swift */,
+				8B328148283D6BA700D65FAA /* Home.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 				8B5333A1282198B4007FF590 /* HomeViewController.swift in Sources */,
 				8B5333BF2822D2C3007FF590 /* HomeViewModel.swift in Sources */,
 				8B328151283D763A00D65FAA /* HomeViewControllerFactory.swift in Sources */,
-				8B328149283D6BA700D65FAA /* HomeView.swift in Sources */,
+				8B328149283D6BA700D65FAA /* Home.swift in Sources */,
 				8B53339D282198B4007FF590 /* AppDelegate.swift in Sources */,
 				8BD38BF228303D8F00F8EB41 /* Extensions.swift in Sources */,
 				8B5333C52822D7F1007FF590 /* PersonInfoViewModel.swift in Sources */,

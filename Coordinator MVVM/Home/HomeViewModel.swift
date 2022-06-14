@@ -1,6 +1,6 @@
 import Foundation
 
-class HomeViewModel: HomeView {
+class HomeViewModel: Home {
     var coordinator: Coordinator
     
     init(coordinator: MainCoordinator) {
